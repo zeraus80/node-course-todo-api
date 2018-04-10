@@ -17,6 +17,6 @@ if (process.env.PORT) {
     options = {};
 }
 
-mongoose.connect(connectPath, options);
+mongoose.connect(connectPath, options).then(() => console.log('success connection'), err => console.log(err));
 
 module.exports = { mongoose };
